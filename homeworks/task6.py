@@ -6,10 +6,10 @@
 """
 
 distance = int(input('Введите дистанцию первого дня (км.): '))
-target_distance = int(input('Введите целевую дистанцию (км.): '))
+distance_target = int(input('Введите целевую дистанцию (км.): '))
 
 day = 1
-while distance < target_distance:
+while distance < distance_target:
     day += 1
     distance *= 1.1
     print(f'{day}-й день: {distance:.2f} км.')
