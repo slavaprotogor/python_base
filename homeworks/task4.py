@@ -13,5 +13,5 @@ while number_len:
     if value > max_value:
         max_value = value
 
-print('Максимальное число =', max_value)
+print('Максимальное число = ', max_value)
 
