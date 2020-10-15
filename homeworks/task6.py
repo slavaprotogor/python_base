@@ -13,4 +13,5 @@ while distance < target_distance:
     day += 1
     distance *= 1.1
     print(f'{day}-й день: {distance:.2f} км.')
+
 print(f'Ответ: на {day}-й день спортсмен достиг результата — не менее {distance:.2f} км.')

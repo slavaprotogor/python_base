@@ -19,8 +19,10 @@ else:
     print(f'Фирма работает с убытком = {income} руб.')
 
 profit_percents = income / proceeds * 100
+
 print(f'Рентабильность фирмы = {profit_percents:.2f}%')
 
 employees_number = int(input('Введите количество сотрудников: '))
 employee_income = income / employees_number
+
 print(f'Прибыль на каждого сотрудника  = {employee_income:.2f} руб.')

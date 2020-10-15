@@ -11,6 +11,7 @@ weight = int(input('Введите Ваш вес: '))
 height = int(input('Введите Ваш рост: '))
 
 year_birth = year_current - age
+
 print('Год Вашего рождения = ', year_birth)
 
 print(f'Студент:\n\nИмя: {name};\nФамилия: {surname};\n'
