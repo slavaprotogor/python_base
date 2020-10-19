@@ -13,7 +13,7 @@ while True:
     mounth = input('Введите месяц (целое число): ')
 
     if not mounth.isdigit():
-        print('Должно быть введино целое число. Попробуйте еще раз.')
+        print('Должно быть введено целое число. Попробуйте еще раз.')
         continue
 
     mounth = int(mounth)
