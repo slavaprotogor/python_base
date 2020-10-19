@@ -17,13 +17,13 @@ while True:
         continue
 
     digit = int(digit)
-    digits_len = len(digits)
+    index_last = len(digits) - 1
     for index, digit_item in enumerate(digits):
         if digit > digit_item:
             digits.insert(index, digit)
             break
 
-        if index == digits_len - 1:
+        if index == index_last:
             digits.append(digit)
             break
     else:
