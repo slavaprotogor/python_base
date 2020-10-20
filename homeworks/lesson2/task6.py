@@ -39,6 +39,9 @@ for index in range(1, product_number + 1):
 products_analitic = {}
 for index, product in products:
     for name, value in product.items():
-        products_analitic.setdefault(name, []).append(value)
+        if name == 'unit':
+            products_analitic.setdefault(name, set()).add(value)
+        else:
+            products_analitic.setdefault(name, []).append(value)
 
 print(products_analitic)
