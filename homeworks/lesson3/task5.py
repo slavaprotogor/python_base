@@ -16,12 +16,11 @@ while True:
     digits_list = digits_str.split()
 
     try:
-        digits_list_int = my_map(int, digits_list)
+        digits_sum = my_sum(my_map(int, digits_list))
     except ValueError:
         print('В последовательности есть нечисловые символы. Повторите ввод.')
         continue
 
-    digits_sum = my_sum(digits_list_int)
     global_sum += digits_sum
 
     print('Сумма введенныс чисал: ', digits_sum)
