@@ -5,7 +5,7 @@
 
 def input_type(message: str, check_type) -> int:
     """
-    Функция создает диалог ввода числа c заданного типа
+    Функция создает диалог ввода числа заданного типа
 
     :param message: сообщение
     :param check_type: проверяемый тип

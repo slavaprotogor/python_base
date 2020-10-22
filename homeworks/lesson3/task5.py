@@ -26,7 +26,7 @@ while True:
 
     print('Сумма введенныс чисал: ', digits_sum)
 
-    if input('Прекратить ввод? (y/n): ').lower() == 'y':
+    if input('Прервать ввод? (y/n): ').lower() == 'y':
         break
 
 print('Результат: ', global_sum)

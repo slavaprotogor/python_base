@@ -17,6 +17,5 @@ print('Результат: ', word_capitalize)
 
 text = input('Введите предложение: ')
 words = text.split()
-words_capitalized = my_map(my_capitalize, words)
-text_capitalized = ' '.join(words_capitalized)
+text_capitalized = ' '.join(my_map(my_capitalize, words))
 print('Результат: ', text_capitalized)
