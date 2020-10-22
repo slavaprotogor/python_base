@@ -23,7 +23,7 @@ while True:
 
     global_sum += digits_sum
 
-    print('Сумма введенныс чисал: ', digits_sum)
+    print('Сумма введенных чисел: ', digits_sum)
 
     if input('Прервать ввод? (y/n): ').lower() == 'y':
         break
