@@ -31,6 +31,7 @@ while True:
         print('Текст содержит не только латинские буквы в нижнем регистре. '
               'Поробуйте снова.')
         continue
+
     text_capitalized = ' '.join(my_map(my_capitalize, words))
     print('Результат: ', text_capitalized)
 
