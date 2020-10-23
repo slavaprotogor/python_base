@@ -17,14 +17,9 @@ while True:
         continue
 
     digit = int(digit)
-    index_last = len(digits) - 1
     for index, digit_item in enumerate(digits):
         if digit > digit_item:
             digits.insert(index, digit)
-            break
-
-        if index == index_last:
-            digits.append(digit)
             break
     else:
         digits.append(digit)
