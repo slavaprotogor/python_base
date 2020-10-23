@@ -15,9 +15,7 @@ while True:
 elements_len = len(elements)
 index = 1
 while index < elements_len:
-    element = elements[index]
-    elements[index] = elements[index - 1]
-    elements[index - 1] = element
+    elements[index - 1], elements[index] = elements[index], elements[index - 1]
     index += 2
 
 print('Результат: ', elements)
