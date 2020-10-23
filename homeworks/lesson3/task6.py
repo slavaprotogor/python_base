@@ -8,14 +8,31 @@
 Сделать вывод исходной строки, но каждое слово должно начинаться с заглавной буквы.
 Необходимо использовать написанную ранее функцию int_func().
 """
-from helpers import my_map, my_capitalize
+from helpers import my_map, my_capitalize, is_latin_lower
 
 
-word = input('Введите слово: ')
-word_capitalize = my_capitalize(word)
-print('Результат: ', word_capitalize)
+while True:
+    word = input('Введите слово: ')
+    if not is_latin_lower(word):
+        print('Текст содержит не только латинские буквы в нижнем регистре. '
+              'Поробуйте снова.')
+        continue
 
-text = input('Введите предложение: ')
-words = text.split()
-text_capitalized = ' '.join(my_map(my_capitalize, words))
-print('Результат: ', text_capitalized)
+    word_capitalize = my_capitalize(word)
+    print('Результат: ', word_capitalize)
+
+    if input('Прервать ввод? (y/n): ').lower() == 'y':
+        break
+
+while True:
+    text = input('Введите предложение: ')
+    words = text.split()
+    if not is_latin_lower(''.join(words)):
+        print('Текст содержит не только латинские буквы в нижнем регистре. '
+              'Поробуйте снова.')
+        continue
+    text_capitalized = ' '.join(my_map(my_capitalize, words))
+    print('Результат: ', text_capitalized)
+
+    if input('Прервать ввод? (y/n): ').lower() == 'y':
+        break

@@ -120,3 +120,13 @@ def my_capitalize(text: str) -> str:
     :return: строка с заглавной буквой
     """
     return text[0].upper() + text[1:].lower()
+
+
+def is_latin_lower(text: str) -> bool:
+    """
+    Функция проверяет состоит ли текст лько из латинских букв нижнего регистра
+
+    :param text: текст
+    :return: True/False
+    """
+    return all((97 <= ord(char) <= 122 for char in text))
