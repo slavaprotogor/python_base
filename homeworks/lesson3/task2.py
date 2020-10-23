@@ -7,6 +7,17 @@ from helpers import input_type
 
 
 def user_info(name: str, surname: str, year: int, city: str, email: str, phone: str):
+    """
+    Функция выводит информацию о студенте
+
+    :param name: имя
+    :param surname: фамилия
+    :param year: год рождения
+    :param city: город проживания
+    :param email: электронная почта
+    :param phone: номер телефона
+    :return: None
+    """
     print(f'Имя: {name}, фамилия:  {surname}, год рождения: {year},'
           f' город проживания: {city}, электронная почта: {email}, телефон: {phone}')
 
