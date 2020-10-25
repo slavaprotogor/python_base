@@ -5,11 +5,11 @@
 from typing import Sequence
 
 
-def digits_new(digits: Sequence):
+def digits_prev_more(digits: Sequence):
     """
     Выдает числа, которые больше предыдущего в последовательности
 
-    :param digits:
+    :param digits: последовательность
     :return: число
     """
     i = 1
@@ -24,4 +24,4 @@ def digits_new(digits: Sequence):
 
 digit_list = (8, 7, 3, 63, 5, 5, 7, 8)
 
-print('Новый список: ', list(digits_new(digit_list)))
+print('Новый список: ', list(digits_prev_more(digit_list)))

@@ -8,14 +8,14 @@
 def formula_salary(hs: int, hp: float, b: int) -> float:
     """
     Формула расчета заработной платы.
-    salary = (hr * hp) + b
+    salary = hr * hp + b
 
     :param hs: отработаных часов
     :param hp: ставка плата за час работы
     :param b: перемия
     :return: зарплата
     """
-    return (hs * hp) + b
+    return hs * hp + b
 
 
 workers = [
