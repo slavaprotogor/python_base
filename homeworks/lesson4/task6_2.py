@@ -12,6 +12,7 @@ try:
     number = int(sys.argv[1])
 except ValueError:
     print('Параметр должен быть числовым')
+    exit(1)
 
 for index, item in enumerate(cycle('ABCD')):
     if index == number:

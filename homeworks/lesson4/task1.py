@@ -27,3 +27,4 @@ try:
     print('Зарплата = ', formula_salary(hours, hour_pay, bonus))
 except ValueError:
     print('Все параметры должны быть числовыми')
+    exit(1)
