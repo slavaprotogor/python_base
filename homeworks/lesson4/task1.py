@@ -20,7 +20,7 @@ def formula_salary(hs: float, hp: float, b: float) -> float:
 
 
 if len(sys.argv) != 4:
-    raise ValueError('Должено быть указано 3 параметра.')
+    raise ValueError('Должно быть указано 3 параметра.')
 
 try:
     hours, hour_pay, bonus = float(sys.argv[1]), float(sys.argv[2]), float(sys.argv[3])
