@@ -19,10 +19,11 @@ def formula_salary(hs: float, hp: float, b: float) -> float:
     return hs * hp + b
 
 
+if len(sys.argv) != 4:
+    raise ValueError('Должено быть указано 3 параметра.')
+
 try:
     hours, hour_pay, bonus = float(sys.argv[1]), float(sys.argv[2]), float(sys.argv[3])
     print('Зарплата = ', formula_salary(hours, hour_pay, bonus))
 except ValueError:
     print('Все параметры должны быть числовыми')
-except IndexError:
-    print('Должно быть задано минимум 3 параметра')
