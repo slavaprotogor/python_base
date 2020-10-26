@@ -5,7 +5,7 @@
 Функция отвечает за получение факториала числа, а в цикле необходимо выводить
 только первые n чисел, начиная с 1! и до n!.
 """
-from helpers import input_int, my_range, my_reduce
+from helpers import input_int, my_range, my_reduce, my_enumerate
 
 
 # version 1
@@ -28,11 +28,11 @@ def fact(number: int) -> int:
 
 number_fact = input_int('Факториал числа: ')
 
-for idx, item in enumerate(fact(number_fact), 1):
+for idx, item in my_enumerate(fact(number_fact), 1):
     print(f'Факториал {idx} = ', item)
 
 
 # version 2
 number = input_int('Факториал числа: ')
 
-print(f'Факториал числа {number}: ', my_reduce(my_range(number, 1), lambda x, y: x * y, 1))
+print(f'Факториал числа {number} = ', my_reduce(my_range(number, 1), lambda x, y: x * y, 1))

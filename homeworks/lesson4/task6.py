@@ -4,7 +4,7 @@
 б) итератор, повторяющий элементы некоторого списка, определенного заранее
 """
 from itertools import count, cycle
-from helpers import input_int, my_count, my_range, my_cycle
+from helpers import input_int, my_count, my_range, my_cycle, my_enumerate
 
 
 # version 1
@@ -29,7 +29,7 @@ for item in count():
         break
     print('Item:  ', item)
 
-for index, item in enumerate(cycle('ABCD'), 1):
+for index, item in my_enumerate(cycle('ABCD'), 1):
     if index == 100:
         break
     print('Item: ', item)

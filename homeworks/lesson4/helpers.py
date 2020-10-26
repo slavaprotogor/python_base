@@ -2,7 +2,7 @@
 Модуль с полезными функциями
 """
 from time import time
-from typing import Sequence
+from typing import Sequence, Iterable
 
 
 def input_int(message: str) -> int:
@@ -88,3 +88,17 @@ def my_count(start: int = 0, step: int = 0, duration: int = 1):
         index += step
     else:
         raise StopIteration
+
+
+def my_enumerate(items: Iterable, start: int = 0):
+    """
+    Добавляет индекс при итерации
+
+    :param items: последовательность
+    :param start: начальное значение
+    :return: элемент с индексом
+    """
+    index = start
+    for item in items:
+        yield index, item
+        index += 1
