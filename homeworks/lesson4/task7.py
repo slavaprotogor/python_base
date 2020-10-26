@@ -26,13 +26,13 @@ def fact(number: int) -> int:
         raise StopIteration
 
 
-number_fact = input_int('Фактариал числа: ')
+number_fact = input_int('Факториал числа: ')
 
 for idx, item in enumerate(fact(number_fact), 1):
     print(f'Факториал {idx} = ', item)
 
 
 # version 2
-number = input_int('Фактариал числа: ')
+number = input_int('Факториал числа: ')
 
 print(f'Факториал числа {number}: ', my_reduce(my_range(number, 1), lambda x, y: x * y, 1))
