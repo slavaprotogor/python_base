@@ -2,7 +2,7 @@
 Модуль с полезными функциями
 """
 from time import time
-from typing import Sequence, Iterable
+from typing import Sequence, Iterable, Callable
 
 
 def input_int(message: str) -> int:
@@ -36,7 +36,7 @@ def my_range(end: int = 0, start: int = 0, step: int = 1):
         raise StopIteration
 
 
-def my_reduce(items: Sequence, func: callable, start: int = 0) -> float:
+def my_reduce(items: Sequence, func: Callable, start: int = 0) -> float:
     """
     Применяет указанную функцию к элементам последовательности, сводя её к единственному значению
 
