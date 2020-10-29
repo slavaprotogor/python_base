@@ -5,19 +5,6 @@ import re
 from typing import Sequence, Tuple
 
 
-def input_int(message: str) -> int:
-    """ Функция создает диалог ввода числа
-
-    :param message: сообщение
-    :return: число введенное пользователем
-    """
-    while True:
-        try:
-            return int(input(message))
-        except ValueError:
-            print('Попробуйте еще раз')
-
-
 def parse_to_int(text: str) -> int:
     """ Полчить число из строки или 0
 
@@ -45,6 +32,9 @@ def my_avg(items: Sequence) -> float:
     :param items: последовательность чисел
     :return: среднее значение
     """
+    if not items:
+        raise ValueError('Последовательность не должна быть пустой.')
+
     return my_sum(items) / len(items)
 
 

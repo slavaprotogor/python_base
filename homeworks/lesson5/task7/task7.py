@@ -52,6 +52,8 @@ def main():
     with open(os.path.join(DIR, 'result.json'), 'w') as f:
         json.dump(result, f, ensure_ascii=False)
 
+    print('Операция окончена.')
+
 
 if __name__ == "__main__":
     main()
