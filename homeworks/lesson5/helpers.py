@@ -55,9 +55,8 @@ def file_stat(file_name: str) -> Tuple[int, int]:
     :param file_name: полное имя файла
     :return: кол-во строк, кол-во слов
     """
-    l_count, w_count = 0, 0
+    l_count = 0
     with open(file_name, 'r') as f:
         for line in f:
             l_count += 1
-            w_count += len(line.split())
-    return l_count, w_count
+            yield l_count, len(line.split())

@@ -15,10 +15,8 @@ FILE_NAME = os.path.join(DIR, 'task2_file.txt')
 
 
 def main():
-    line_count, word_count = file_stat(FILE_NAME)
-
-    print(f'Кол-во линий в файле: {line_count};\n'
-          f'Кол-во слов в файле: {word_count};')
+    for line_index, words_count in file_stat(FILE_NAME):
+        print(f'Номер строки: {line_index}, кол-во слов: {words_count};')
 
 
 if __name__ == '__main__':
