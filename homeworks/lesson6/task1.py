@@ -18,6 +18,7 @@ class Color:
 
 
 class TrafficLight:
+    __color = None
 
     def __init__(self):
         self.__colors = []
@@ -27,7 +28,8 @@ class TrafficLight:
 
     def running(self):
         for color in cycle(self.__colors):
-            print('Свет: ', color.name)
+            self.__color = color.name
+            print('Свет: ', self.__color)
             time.sleep(color.delay)
 
 

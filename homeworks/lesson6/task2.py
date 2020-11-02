@@ -9,13 +9,15 @@
 
 
 class Road:
+    _length = 0
+    _width = 0
 
     def __init__(self, length: int, width: int):
-        self.__length = length
-        self.__width = width
+        self._length = length
+        self._width = width
 
     def calc_weight(self, height: int, weight_rect: int):
-        return self.__length * self.__width * height * weight_rect
+        return self._length * self._width * height * weight_rect
 
 
 road = Road(20, 5000)
