@@ -40,7 +40,7 @@ pen = Pen('Ручка')
 assert pen.draw() == 'Пишет ручка', 'Ошибка'
 
 pencil = Pencil('Карандаш')
-assert pencil.draw() == 'Пишет карандаш', 'Ошибка'
+assert pencil.draw() == 'Чертит карандаш', 'Ошибка'
 
 handle = Handle('Маркер')
-assert handle.draw() == 'Пишет маркер', 'Ошибка'
+assert handle.draw() == 'Рисует маркер', 'Ошибка'
