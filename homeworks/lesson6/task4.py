@@ -22,8 +22,8 @@ class Car:
     def stop(self):
         print('Машина остановилась.')
 
-    def turn(self, direcrion):
-        print('Машина повернула {direcrion}.')
+    def turn(self, direction):
+        print(f'Машина повернула {direction}.')
 
     def show_speed(self):
         print('Speed: ', self._speed)
