@@ -6,6 +6,7 @@
 который должен показывать текущую скорость автомобиля. Для классов TownCar и WorkCar переопределите метод show_speed.
 При значении скорости свыше 60 (TownCar) и 40 (WorkCar) должно выводиться сообщение о превышении скорости.
 """
+from random import randrange
 
 
 class Car:
@@ -16,17 +17,21 @@ class Car:
         self._name = name
         self._is_police = is_police
 
+        self._speed_now = 0
+
     def go(self):
-        print('Машина едет.')
+        self._speed_now = randrange(1, self._speed)
+        print(f'Машина "{self._name}" едет.')
 
     def stop(self):
-        print('Машина остановилась.')
+        self._speed_now = 0
+        print(f'Машина "{self._name}" остановилась.')
 
     def turn(self, direction):
-        print(f'Машина повернула {direction}.')
+        print(f'Машина "{self._name}" повернула {direction}.')
 
     def show_speed(self):
-        print('Speed: ', self._speed)
+        print(f'Скорость "{self._name}" - {self._speed_now} к/ч')
 
 
 class TownCar(Car):
@@ -36,7 +41,7 @@ class TownCar(Car):
 
     def show_speed(self):
         super().show_speed()
-        if self._speed > 60:
+        if self._speed_now > 60:
             print('Превышение скорости!')
 
 
@@ -47,7 +52,7 @@ class WorkCar(Car):
 
     def show_speed(self):
         super().show_speed()
-        if self._speed > 40:
+        if self._speed_now > 40:
             print('Превышение скорости!')
 
 
@@ -61,3 +66,32 @@ class SportCar(Car):
 
     def __init__(self, speed: int, color: str, name: str):
         super().__init__(speed, color, name, False)
+
+
+tcar = TownCar(100, 'белый', 'Toyota Corolla')
+tcar.go()
+tcar.show_speed()
+tcar.turn('вправо')
+tcar.stop()
+tcar.show_speed()
+
+wcar = WorkCar(90, 'черный', 'Ford F-150')
+wcar.go()
+wcar.show_speed()
+wcar.turn('вправо')
+wcar.stop()
+wcar.show_speed()
+
+pcar = PoliceCar(90, 'зелный', 'Ford F-150')
+pcar.go()
+pcar.show_speed()
+pcar.turn('влево')
+pcar.stop()
+pcar.show_speed()
+
+scar = SportCar(350, 'красный', 'Ferrari 488')
+scar.go()
+scar.show_speed()
+scar.turn('прямо')
+scar.stop()
+scar.show_speed()

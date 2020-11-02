@@ -12,11 +12,14 @@
 
 class Worker:
 
-    def __init__(self, name, surname, position, income):
+    def __init__(self, name, surname, position, wage, bonus):
         self.name = name
         self.surname = surname
         self.position = position
-        self._income = income
+        self._income = {
+            'wage': wage,
+            'bonus': bonus,
+        }
 
 
 class Position(Worker):
@@ -28,8 +31,15 @@ class Position(Worker):
         return self._income['wage'] + self._income['bonus']
 
 
-person = Position('Slava', 'Zanin', 'boss', {'wage': 100000, 'bonus': 50000})
+person1 = Position('Ivan', 'Ivanov', 'boss', 100000, 50000)
 
-print(person.get_full_name())
+assert person1.get_full_name() == 'Ivan Ivanov', 'Ошибка'
 
-print(person.get_total_income())
+assert person1.get_total_income() == 150000, 'Ошибка'
+
+
+person2 = Position('Petr', 'Petrov', 'programmist', 300000, 50000)
+
+assert person2.get_full_name() == 'Petr Petrov', 'Ошибка'
+
+assert person2.get_total_income() == 350000, 'Ошибка'
