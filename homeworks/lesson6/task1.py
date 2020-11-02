@@ -7,6 +7,7 @@
 Проверить работу примера, создав экземпляр и вызвав описанный метод.
 """
 import time
+from itertools import cycle
 
 
 class Color:
@@ -25,7 +26,7 @@ class TrafficLight:
         self.__colors.append(color)
 
     def running(self):
-        for color in self.__colors:
+        for color in cycle(self.__colors):
             print('Свет: ', color.name)
             time.sleep(color.delay)
 
