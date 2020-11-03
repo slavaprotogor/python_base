@@ -13,6 +13,11 @@ from itertools import cycle
 class Color:
 
     def __init__(self, name: str, delay: int):
+        """ Инициализация инстанса класса
+
+        :param name: название
+        :param delay: задержка
+        """
         self.name = name
         self.delay = delay
 
