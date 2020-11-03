@@ -32,4 +32,4 @@ class Road:
 
 
 road = Road(20, 5000)
-assert road.calc_weight(0.05, 25) == 125000, "Calculation error"
+assert road.calc_weight(0.005, 25) == 12500, "Calculation error"
