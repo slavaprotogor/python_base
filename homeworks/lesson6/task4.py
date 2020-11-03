@@ -12,6 +12,13 @@ from random import randrange
 class Car:
 
     def __init__(self, speed: int, color: str, name: str, is_police: bool):
+        """ Инициализация инстанса класса
+
+        :param speed: скорость
+        :param color: цвет
+        :param name: название
+        :param is_police: полицейская
+        """
         self._speed = speed
         self._color = color
         self._name = name
@@ -20,26 +27,47 @@ class Car:
         self._speed_now = 0
 
     def go(self):
+        """ Машина поехала
+
+        :return: None
+        """
         self._speed_now = randrange(1, self._speed)
         print(f'Машина "{self._name}" едет.')
 
     def stop(self):
+        """ Машина остановилась
+
+        :return: None
+        """
         self._speed_now = 0
         print(f'Машина "{self._name}" остановилась.')
 
     def turn(self, direction):
+        """ Машина повернула
+
+        :return: None
+        """
         print(f'Машина "{self._name}" повернула {direction}.')
 
     def show_speed(self):
+        """ Показать скорость машины
+
+        :return: None
+        """
         print(f'Скорость "{self._name}" - {self._speed_now} к/ч')
 
 
 class TownCar(Car):
 
     def __init__(self, speed: int, color: str, name: str):
+        """ Инициализация инстанса класса """
         super().__init__(speed, color, name, False)
 
     def show_speed(self):
+        """ Показать скорость машины
+
+        :return: None
+        """
         super().show_speed()
         if self._speed_now > 60:
             print('Превышение скорости!')
@@ -48,9 +76,14 @@ class TownCar(Car):
 class WorkCar(Car):
 
     def __init__(self, speed: int, color: str, name: str):
+        """ Инициализация инстанса класса """
         super().__init__(speed, color, name, False)
 
     def show_speed(self):
+        """ Показать скорость машины
+
+        :return: None
+        """
         super().show_speed()
         if self._speed_now > 40:
             print('Превышение скорости!')
@@ -59,12 +92,14 @@ class WorkCar(Car):
 class PoliceCar(Car):
 
     def __init__(self, speed: int, color: str, name: str):
+        """ Инициализация инстанса класса """
         super().__init__(speed, color, name, True)
 
 
 class SportCar(Car):
 
     def __init__(self, speed: int, color: str, name: str):
+        """ Инициализация инстанса класса """
         super().__init__(speed, color, name, False)
 
 

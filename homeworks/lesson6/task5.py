@@ -11,28 +11,48 @@
 
 class Stationery:
 
-    def __init__(self, title):
+    def __init__(self, title: str):
+        """ Инициализация инстанса класса
+
+        :param title: название
+        """
         self._title = title
 
     def draw(self):
+        """ Канцелярская принадлежность пишет
+
+        :return: название действия
+        """
         return 'Запуск отрисовки'
 
 
 class Pen(Stationery):
 
     def draw(self):
+        """ Ручка пишет
+
+        :return: название действия
+        """
         return 'Пишет ручка'
 
 
 class Pencil(Stationery):
 
     def draw(self):
+        """ Карандаш пишет
+
+        :return: название действия
+        """
         return 'Чертит карандаш'
 
 
 class Handle(Stationery):
 
     def draw(self):
+        """ Маркер пишет
+
+        :return: название действия
+        """
         return 'Рисует маркер'
 
 

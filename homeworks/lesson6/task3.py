@@ -12,7 +12,15 @@
 
 class Worker:
 
-    def __init__(self, name, surname, position, wage, bonus):
+    def __init__(self, name: str, surname: str, position: str, wage: int, bonus: int):
+        """ Инициализация инстанса класса
+
+        :param name: имя
+        :param surname: фамилия
+        :param position: должность
+        :param wage: ставка
+        :param bonus: премия
+        """
         self.name = name
         self.surname = surname
         self.position = position
@@ -25,9 +33,17 @@ class Worker:
 class Position(Worker):
 
     def get_full_name(self):
+        """ Вывод полного имени
+
+        :return: полное имя
+        """
         return f'{self.name} {self.surname}'
 
     def get_total_income(self):
+        """ Вывод общего дохода
+
+        :return: общий доход
+        """
         return self._income['wage'] + self._income['bonus']
 
 

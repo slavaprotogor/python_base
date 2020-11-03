@@ -12,7 +12,7 @@ from itertools import cycle
 
 class Color:
 
-    def __init__(self, name, delay):
+    def __init__(self, name: str, delay: int):
         self.name = name
         self.delay = delay
 
@@ -21,12 +21,24 @@ class TrafficLight:
     __color = None
 
     def __init__(self):
+        """
+        Инициализация инстанса класса
+        """
         self.__colors = []
 
     def add_color(self, color: Color):
+        """ Добавить свет в светофор
+
+        :param color: свет
+        :return: None
+        """
         self.__colors.append(color)
 
     def running(self):
+        """ Запуск светофора
+
+        :return: None
+        """
         for color in cycle(self.__colors):
             self.__color = color.name
             print('Свет: ', self.__color)
