@@ -13,6 +13,8 @@ from typing import List
 
 class Matrix:
     """ Класс матрицы """
+    __slots__ = ('__items',)
+
     def __init__(self, items: List[List[float or int]]):
         """ Инициализация инстанса класса
 

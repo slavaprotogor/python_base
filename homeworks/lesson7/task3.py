@@ -24,6 +24,8 @@
 
 class Cell:
     """ Класс клеткаи """
+    __slots__ = ('__cores',)
+
     def __init__(self, cores: int):
         """ Инициализация инстанса класса
 
