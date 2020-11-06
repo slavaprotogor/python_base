@@ -19,7 +19,7 @@ class Matrix:
         :param items: список списков с числами
         """
         if not isinstance(items, list) or not isinstance(items[0], list):
-            raise ValueError('Items must be a list of list')
+            raise ValueError('Items must be a list of list digits')
 
         self.__items = items
 
