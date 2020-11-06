@@ -64,7 +64,7 @@ class Matrix:
         if not isinstance(other, Matrix):
             raise TypeError('The object must be a Matrix')
 
-        if self.row_count != other.row_count or self.row_count != other.row_count:
+        if self.row_count != other.row_count or self.column_count != other.column_count:
             raise ValueError('Matrices must be equal size')
 
         items_new = []
