@@ -58,8 +58,8 @@ class Matrix:
     def __add__(self, other):
         """ Сложение матрицы
 
-        :param other:
-        :return:
+        :param other: объект Matrix
+        :return: новая матрица
         """
         if not isinstance(other, Matrix):
             raise ValueError('The object must be a Matrix')
