@@ -3,9 +3,10 @@
  В расчете необходимо использовать формулу: (выработка в часах * ставка в час) + премия.
  Для выполнения расчета для конкретных значений необходимо запускать скрипт с параметрами.
 """
+import sys
 
 
-def formula_salary(hs: int, hp: float, b: int) -> float:
+def formula_salary(hs: float, hp: float, b: float) -> float:
     """
     Формула расчета заработной платы.
     salary = hr * hp + b
@@ -18,12 +19,12 @@ def formula_salary(hs: int, hp: float, b: int) -> float:
     return hs * hp + b
 
 
-workers = [
-    (1, 180, 320.3, 40000),
-    (2, 150, 250.1, 80000),
-    (3, 160, 190.9, 20000),
-]
+if len(sys.argv) != 4:
+    raise ValueError('Должно быть указано 3 параметра.')
 
-print('id | salary')
-for idx, hours, hour_pay, bonus in workers:
-    print(f'{idx:>2} | {formula_salary(hours, hour_pay, bonus)}')
+try:
+    hours, hour_pay, bonus = float(sys.argv[1]), float(sys.argv[2]), float(sys.argv[3])
+    print('Зарплата = ', formula_salary(hours, hour_pay, bonus))
+except ValueError:
+    print('Все параметры должны быть числовыми')
+    exit(1)
