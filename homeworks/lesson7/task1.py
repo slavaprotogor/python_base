@@ -48,7 +48,7 @@ class Matrix:
         return self.__items
 
     def __str__(self) -> str:
-        """ Строуовое представление матрицы """
+        """ Строковое представление матрицы """
 
         values_str = ''
         for row in self.__items:
