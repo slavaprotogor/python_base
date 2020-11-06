@@ -97,10 +97,10 @@ class Cell:
         """
         chunks, tail = divmod(self.__cores, chunk_size)
 
-        cells_graph = ['*' * chunk_size for _ in range(chunks)]
+        cores_graph = ['*' * chunk_size for _ in range(chunks)]
         if tail:
-            cells_graph.append('*' * tail)
-        return '/n'.join(cells_graph)
+            cores_graph.append('*' * tail)
+        return '/n'.join(cores_graph)
 
 
 if __name__ == '__main__':
