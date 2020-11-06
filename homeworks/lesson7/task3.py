@@ -35,7 +35,7 @@ class Cell:
         self.__cores = cores
 
     @property
-    def number(self):
+    def cores(self):
         """ Свойство возвращает количество ячеек
 
         :return: кол-во ячеек
@@ -51,7 +51,7 @@ class Cell:
         if not isinstance(other, Cell):
             raise ValueError('The object must be a Cell')
 
-        return Cell(self.__cores + other.number)
+        return Cell(self.__cores + other.cores)
 
     def __sub__(self, other):
         """ Вычетание клеток и получение новой клетки
@@ -61,10 +61,10 @@ class Cell:
         """
         if not isinstance(other, Cell):
             raise ValueError('The object must be a Cell')
-        if other.number >= self.__cores:
-            raise ValueError('Cell number more then number of first Cell')
+        if other.cores >= self.__cores:
+            raise ValueError('Cell cores more then cores of first Cell')
 
-        return Cell(max(self.__cores - other.number, 0))
+        return Cell(self.__cores - other.cores)
 
     def __mul__(self, other):
         """ Умножение клеток и получение новой клетки
@@ -75,7 +75,7 @@ class Cell:
         if not isinstance(other, Cell):
             raise ValueError('The object must be a Cell')
 
-        return Cell(self.__cores * other.number)
+        return Cell(self.__cores * other.cores)
 
     def __truediv__(self, other):
         """ Деление клеток и получение новой клетки
@@ -86,7 +86,7 @@ class Cell:
         if not isinstance(other, Cell):
             raise ValueError('The object must be a Cell')
 
-        return Cell(round(self.__cores / other.number))
+        return Cell(round(self.__cores / other.cores))
 
     def make_order(self, chunk_size: int) -> str:
         """ Метод рисует строковое представление ячеек

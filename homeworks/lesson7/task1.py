@@ -35,7 +35,7 @@ class Matrix:
     def column_count(self) -> int:
         """ Свойство возвращает количество столбцов матрицы
 
-        :return: количество строк
+        :return: количество столбцов
         """
         return len(self.__items[0])
 
@@ -49,6 +49,7 @@ class Matrix:
 
     def __str__(self) -> str:
         """ Строуовое представление матрицы """
+
         values_str = ''
         for row in self.__items:
             values_str += ', '.join(map(str, row)) + '\n'
