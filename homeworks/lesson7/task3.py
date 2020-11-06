@@ -23,7 +23,7 @@
 
 
 class Cell:
-    """ Класс клеткаи """
+    """ Класс клетки """
     __slots__ = ('__cores',)
 
     def __init__(self, cores: int):
