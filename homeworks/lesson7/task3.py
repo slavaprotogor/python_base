@@ -29,7 +29,10 @@ class Cell:
 
         :param cores: количество ячеек
         """
-        if not isinstance(cores, int) or cores <= 0:
+        if not isinstance(cores, int):
+            raise TypeError('Cores must be a integer')
+
+        if cores <= 0:
             raise ValueError('Cores must be a positive integer')
 
         self.__cores = cores
@@ -49,7 +52,7 @@ class Cell:
         :return: новая клетка
         """
         if not isinstance(other, Cell):
-            raise ValueError('The object must be a Cell')
+            raise TypeError('The object must be a Cell')
 
         return Cell(self.__cores + other.cores)
 
@@ -60,7 +63,7 @@ class Cell:
         :return: новая клетка
         """
         if not isinstance(other, Cell):
-            raise ValueError('The object must be a Cell')
+            raise TypeError('The object must be a Cell')
         if other.cores >= self.__cores:
             raise ValueError('Cell cores more then cores of first Cell')
 
@@ -73,7 +76,7 @@ class Cell:
         :return: новая клетка
         """
         if not isinstance(other, Cell):
-            raise ValueError('The object must be a Cell')
+            raise TypeError('The object must be a Cell')
 
         return Cell(self.__cores * other.cores)
 
@@ -84,7 +87,7 @@ class Cell:
         :return: новая клетка
         """
         if not isinstance(other, Cell):
-            raise ValueError('The object must be a Cell')
+            raise TypeError('The object must be a Cell')
 
         return Cell(round(self.__cores / other.cores))
 

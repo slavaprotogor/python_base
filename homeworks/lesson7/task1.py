@@ -19,7 +19,7 @@ class Matrix:
         :param items: список списков с числами
         """
         if not isinstance(items, list) or not isinstance(items[0], list):
-            raise ValueError('Items must be a list of list digits')
+            raise TypeError('Items must be a list of list digits')
 
         self.__items = items
 
@@ -62,7 +62,10 @@ class Matrix:
         :return: новая матрица
         """
         if not isinstance(other, Matrix):
-            raise ValueError('The object must be a Matrix')
+            raise TypeError('The object must be a Matrix')
+
+        if self.row_count != other.row_count or self.row_count != other.row_count:
+            raise ValueError('Matrices must be equal size')
 
         items_new = []
         for row in range(self.row_count):
