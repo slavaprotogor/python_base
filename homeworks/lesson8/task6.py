@@ -7,8 +7,16 @@
 
 
 class OfficeEquipment:
+    """ Базовый класс оргтехники """
 
-    def __init__(self, name, brand, model, price):
+    def __init__(self, name: str, brand: str, model: str, price: int):
+        """ Инициализация
+
+        :param name: название
+        :param brand: бренд
+        :param model: модель
+        :param price: цена
+        """
         self.__name = name
         self.__brand = brand
         self.__model = model
@@ -16,39 +24,79 @@ class OfficeEquipment:
 
 
 class Printer(OfficeEquipment):
+    """ Класс принтера """
 
     def __init__(self, brand, model, price, color):
+        """ Инициализация
+
+        :param brand: бренд
+        :param model: модель
+        :param price: цена
+        :param color: цыет печати
+        """
         super().__init__('Принтер', brand, model, price)
         self.__color = color
 
 
 class Scanner(OfficeEquipment):
+    """ Класс сканера """
 
     def __init__(self, brand, model, price, type):
+        """ Инициализация
+
+        :param brand: бренд
+        :param model: модель
+        :param price: цена
+        :param type: тип сканера
+        """
         super().__init__('Сканер', brand, model, price)
         self.__type = type
 
 
 class Xerox(OfficeEquipment):
+    """ Класс ксерокса """
 
     def __init__(self, brand, model, price, tank_size):
+        """ Инициализация
+
+        :param brand: бренд
+        :param model: модель
+        :param price: цена
+        :param tank_size: рахмер бака
+        """
         super().__init__('Ксерокс', brand, model, price)
         self.__tank_size = tank_size
 
 
 class StockOfficeEquipment:
+    """ Класс склада """
 
     def __init__(self, name):
+        """ Инициализация
+
+        :param name: название
+        """
         self.__name = name
         self.__items = {}
 
     def add(self, department: str, equipment, amount: int = 1):
+        """ Добавление элемена в склад
+
+        :param department: отдел
+        :param equipment: оргтехника
+        :param amount: количество
+        :return: None
+        """
         if not isinstance(equipment, OfficeEquipment):
             raise ValueError('Object must be a OfficeEquipment')
 
         self.__items.setdefault(department, []).extend([equipment] * amount)
 
     def __str__(self):
+        """ Строковое представление
+
+        :return: строковое представление
+        """
         return str(self.__items)
 
 
