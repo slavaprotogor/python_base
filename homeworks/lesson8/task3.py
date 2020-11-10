@@ -10,7 +10,6 @@
 только если введено число. Класс-исключение должен не позволить пользователю ввести текст (не число) и
 отобразить соответствующее сообщение. При этом работа скрипта не должна завершаться.
 """
-import copy
 
 
 class ItemDigitError(ValueError):
@@ -29,7 +28,7 @@ class MyList:
             if not all((self._is_digit(item) for item in args)):
                 raise ItemDigitError('Some item is not a digit')
 
-        self.__items = list(copy.deepcopy(args)) if args else []
+        self.__items = list(args) if args else []
 
     def _is_digit(self, value: str) -> bool:
         """ Проверяет является элемент числом или нет
