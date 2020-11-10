@@ -112,4 +112,4 @@ if __name__ == '__main__':
     stock.add('Бухгалтерия', scanner, 2)
     stock.add('Отдел кадров', xerox, 5)
 
-    print(stock)
+    print('Содержание склада: ', stock)
