@@ -33,7 +33,7 @@ class Complex:
         return Complex(self.__a * other.a - self.__b * other.b, self.__a * other.b + self.__b * other.a)
 
     def __str__(self):
-        b = f'+ {self.__b}' if self.__b > 0 else f'- {abs(self.__b)}'
+        b = f'+ {self.__b}' if self.__b >= 0 else f'- {abs(self.__b)}'
         return f'{self.__a} {b}i'
 
 
