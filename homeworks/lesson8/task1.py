@@ -16,14 +16,14 @@ class Date:
 
     @classmethod
     def date_to_int(cls, date_str: str) -> Tuple[int, int, int]:
-        if not Date.is_valid_date(date_str):
+        if not cls.is_valid_date(date_str):
             raise ValueError('The date is incorrect')
         day, month, year = tuple(map(int, date_str.split('-')))
         return day, month, year
 
     @staticmethod
     def is_valid_date(date_str: str) -> bool:
-        date_parse = re.match('^([1-3]?\d)-(1?\d)-(\d{4})$', date_str)
+        date_parse = re.match(r'^([1-3]?\d)-(1?\d)-(\d{4})$', date_str)
 
         if not date_parse:
             return False
