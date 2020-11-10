@@ -38,7 +38,7 @@ class Date:
         :param date_str: строковое предстваление даты
         :return: bool
         """
-        date_parse = re.match(r'^([1-9]|[12]\d|3[01])-(\d|1[0-2])-(\d{4})$', date_str)
+        date_parse = re.match(r'^([1-9]|[12]\d|3[01])-([1-9]|1[0-2])-(\d{4})$', date_str)
 
         if not date_parse:
             return False
