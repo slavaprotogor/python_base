@@ -10,12 +10,22 @@ from typing import Tuple
 
 
 class Date:
+    """ Класс даты """
 
     def __init__(self, date_str: str):
+        """ Инициализация
+
+        :param date_str: строковое представление даты
+        """
         self._date_str = date_str
 
     @classmethod
     def date_to_int(cls, date_str: str) -> Tuple[int, int, int]:
+        """ Конвертирует строковое предстваление даты в кортеж
+
+        :param date_str: строковое предстваление даты
+        :return: кортеж
+        """
         if not cls.is_valid_date(date_str):
             raise ValueError('The date is incorrect')
         day, month, year = tuple(map(int, date_str.split('-')))
@@ -23,6 +33,11 @@ class Date:
 
     @staticmethod
     def is_valid_date(date_str: str) -> bool:
+        """ Проверка валидности даты
+
+        :param date_str: строковое предстваление даты
+        :return: bool
+        """
         date_parse = re.match(r'^([1-3]?\d)-(1?\d)-(\d{4})$', date_str)
 
         if not date_parse:
