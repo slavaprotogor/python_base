@@ -23,7 +23,7 @@ class Date:
 
     @staticmethod
     def is_valid_date(date_str: str) -> bool:
-        date_parse = re.match(r'^([1-3]?\d)-(1?\d)-(\d{4})$', date_str)
+        date_parse = re.match('^([1-3]?\d)-(1?\d)-(\d{4})$', date_str)
 
         if not date_parse:
             return False
@@ -40,5 +40,5 @@ class Date:
 
 
 if __name__ == '__main__':
-    Date.date_to_int('30-12-5232') == (30, 12, 5232), 'Error'
-    Date.date_to_int('22-11-2002') == (30, 12, 5232), 'Error'
+    assert Date.date_to_int('30-12-5232') == (30, 12, 5232), 'Error'
+    assert Date.date_to_int('22-11-2002') == (22, 11, 2002), 'Error'
