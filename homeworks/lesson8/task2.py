@@ -10,7 +10,7 @@ def input_float(message: str) -> float:
     """ Диалог ввода чисел
 
     :param message: сообщение
-    :return:
+    :return: число
     """
     while True:
         try:
