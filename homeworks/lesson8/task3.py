@@ -14,19 +14,29 @@ import copy
 
 
 class ItemDigitError(ValueError):
-    pass
+    """ Исключение неправильный тип элемента """
 
 
 class MyList:
+    """ Класс списка элементов """
 
     def __init__(self, *args):
+        """ Инициализация
+
+        :param args: кортеж элементов
+        """
         if args:
             if not all((self._is_digit(item) for item in args)):
                 raise ItemDigitError('Some item is not a digit')
 
         self.__items = list(copy.deepcopy(args)) if args else []
 
-    def _is_digit(self, value):
+    def _is_digit(self, value: str) -> bool:
+        """ Проверяет является элемент числом или нет
+
+        :param value: элемент
+        :return: bool
+        """
         try:
             float(value)
             return True
@@ -34,12 +44,21 @@ class MyList:
             return False
 
     def append(self, item):
+        """ Добавление элемента в список
+
+        :param item: элемент
+        :return: None
+        """
         if not self._is_digit(item):
             raise ItemDigitError('Item is not a digit')
 
         self.__items.append(item)
 
     def __str__(self):
+        """ Строковое представление
+
+        :return: строковое представление
+        """
         return str(self.__items)
 
 
